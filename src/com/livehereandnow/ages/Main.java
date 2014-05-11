@@ -1,7 +1,7 @@
 package com.livehereandnow.ages;
 
-import com.livehereandnow.ages.engine.Engine;
-import com.livehereandnow.ages.engine.EngineCore;
+
+import com.livehereandnow.ages.engine.NewEngine;
 import com.livehereandnow.ages.exception.AgesException;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,11 +11,10 @@ import java.util.List;
 
 public class Main {
 
-    private Engine engine;
-    Engine engineXXX;
-
+    private NewEngine engine;
+  
     public Main() throws AgesException {
-        engine = new Engine();
+        engine = new NewEngine();
     }
 
     public static void main(String[] args) throws IOException, AgesException {
@@ -25,8 +24,9 @@ public class Main {
     public void run() throws AgesException, IOException {
         InputStreamReader cin = new InputStreamReader(System.in);
         BufferedReader in = new BufferedReader(cin);
+//        engine.getField().show();
         while (true) {
-            System.out.print("" + engine.getCurrentPlayer().getName() + " >> ");
+            System.out.print("" + engine.getCurrentPlayer()+ " >> ");
             parser(in.readLine());
         }
     }
